@@ -1,0 +1,18 @@
+# Dependencies and build outputs (none today, kept for safety)
+/vendor
+node_modules
+
+# Runtime cache written by the seed
+/var/*
+!/var/.gitkeep
+
+# Secrets and local config
+.env*
+!.env.example
+.clever.json
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea
+.vscode

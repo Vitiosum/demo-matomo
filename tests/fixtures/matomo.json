@@ -1,0 +1,480 @@
+{
+    "API.getMatomoVersion": "5.14.2",
+    "Live.getCounters": [
+        {
+            "visits": 9,
+            "actions": 52,
+            "visitors": 9,
+            "visitsConverted": 0
+        }
+    ],
+    "VisitsSummary.get": {
+        "2026-10-26": [],
+        "2026-10-27": [],
+        "2026-10-28": [],
+        "2026-10-29": [],
+        "2026-10-30": [],
+        "2026-10-31": [],
+        "2026-11-01": {
+            "nb_visits": 9,
+            "avg_time_on_site": 229
+        }
+    },
+    "Events.getName": [
+        {
+            "label": "Meanders - Lingered",
+            "nb_visits": 5,
+            "nb_events": 5,
+            "nb_events_with_value": 5,
+            "sum_event_value": 40,
+            "min_event_value": 8,
+            "max_event_value": 8,
+            "sum_daily_nb_uniq_visitors": 5,
+            "avg_event_value": 8,
+            "Events_EventName": "Meanders",
+            "Events_EventAction": "Lingered"
+        },
+        {
+            "label": "Seven Ridges at First Light - Lingered",
+            "nb_visits": 3,
+            "nb_events": 3,
+            "nb_events_with_value": 3,
+            "sum_event_value": 24,
+            "min_event_value": 8,
+            "max_event_value": 8,
+            "sum_daily_nb_uniq_visitors": 3,
+            "avg_event_value": 8,
+            "Events_EventName": "Seven Ridges at First Light",
+            "Events_EventAction": "Lingered"
+        },
+        {
+            "label": "Four Squares at Dusk - Lingered",
+            "nb_visits": 1,
+            "nb_events": 1,
+            "nb_events_with_value": 1,
+            "sum_event_value": 8,
+            "min_event_value": 8,
+            "max_event_value": 8,
+            "sum_daily_nb_uniq_visitors": 1,
+            "avg_event_value": 8,
+            "Events_EventName": "Four Squares at Dusk",
+            "Events_EventAction": "Lingered"
+        },
+        {
+            "label": "Wind over Water - Lingered",
+            "nb_visits": 1,
+            "nb_events": 1,
+            "nb_events_with_value": 1,
+            "sum_event_value": 8,
+            "min_event_value": 8,
+            "max_event_value": 8,
+            "sum_daily_nb_uniq_visitors": 1,
+            "avg_event_value": 8,
+            "Events_EventName": "Wind over Water",
+            "Events_EventAction": "Lingered"
+        }
+    ],
+    "Actions.getPageTitles": [
+        {
+            "label": "Entrance hall",
+            "nb_hits": 11,
+            "Actions_PageTitle": "Entrance hall",
+            "segment": "pageTitle==Entrance%2Bhall"
+        },
+        {
+            "label": "Room 3 - Paths",
+            "nb_hits": 8,
+            "Actions_PageTitle": "Room 3 - Paths",
+            "segment": "pageTitle==Room%2B3%2B-%2BPaths"
+        },
+        {
+            "label": "Room 2 - Flow",
+            "nb_hits": 5,
+            "Actions_PageTitle": "Room 2 - Flow",
+            "segment": "pageTitle==Room%2B2%2B-%2BFlow"
+        },
+        {
+            "label": "Room 5 - Horizon",
+            "nb_hits": 5,
+            "Actions_PageTitle": "Room 5 - Horizon",
+            "segment": "pageTitle==Room%2B5%2B-%2BHorizon"
+        },
+        {
+            "label": "Room 1 - Order",
+            "nb_hits": 4,
+            "Actions_PageTitle": "Room 1 - Order",
+            "segment": "pageTitle==Room%2B1%2B-%2BOrder"
+        },
+        {
+            "label": "Room 4 - Colour",
+            "nb_hits": 4,
+            "Actions_PageTitle": "Room 4 - Colour",
+            "segment": "pageTitle==Room%2B4%2B-%2BColour"
+        },
+        {
+            "label": "Curator's office",
+            "nb_hits": 4,
+            "Actions_PageTitle": "Curator's office",
+            "segment": "pageTitle==Curator%2526%2523039%253Bs%2Boffice"
+        }
+    ],
+    "PrivacyManager.getComplianceStatus": {
+        "complianceModeEnforced": false,
+        "complianceConfigControlled": false,
+        "complianceRequirements": [
+            {
+                "name": "Device Model Detection Disabled",
+                "value": "non_compliant",
+                "notes": "Device model detection and device model report must be disabled."
+            },
+            {
+                "name": "Major Browser and OS Versions",
+                "value": "non_compliant",
+                "notes": "Only Major OS and browser versions are stored."
+            },
+            {
+                "name": "Ecommerce Data Collection Restricted",
+                "value": "compliant",
+                "notes": "Compliant because Ecommerce isn't active for this measurable."
+            },
+            {
+                "name": "Ecommerce Order ID Anonymisation Enabled",
+                "value": "non_compliant",
+                "notes": "Order IDs must be anonymised."
+            },
+            {
+                "name": "PII Data Filtering Enabled",
+                "value": "non_compliant",
+                "notes": "Personally Identifiable Information (PII) data must be filtered by the Matomo-recommended PII exclusion list."
+            },
+            {
+                "name": "Aggregated Real-time Reports Enabled",
+                "value": "non_compliant",
+                "notes": "Aggregated real-time reports are required to be enabled."
+            },
+            {
+                "name": "Visits Log and Visitor Profiles Disabled",
+                "value": "non_compliant",
+                "notes": "Visits log is required to be disabled."
+            },
+            {
+                "name": "Campaign Parameter Masking Enabled",
+                "value": "non_compliant",
+                "notes": "Campaign parameter values must be masked before they are stored."
+            },
+            {
+                "name": "Segmented Data Rounding Enabled",
+                "value": "non_compliant",
+                "notes": "Segmented data for count based metrics (such as visits or pageviews) must be rounded to the nearest 10. Note: This rounding applies to reports, exports and API responses."
+            },
+            {
+                "name": "IP Anonymisation Enabled",
+                "value": "compliant",
+                "notes": "Anonymisation of Visitor's IP addresses must be enabled."
+            },
+            {
+                "name": "IP Address Mask Length Configured",
+                "value": "compliant",
+                "notes": "Must be set to at least 2 byte(s), currently 2 byte(s)."
+            },
+            {
+                "name": "Referrer Anonymisation Enabled",
+                "value": "non_compliant",
+                "notes": "Only the referrer host or referrer type may be collected."
+            },
+            {
+                "name": "Raw Data Retention Configured",
+                "value": "compliant",
+                "notes": "Retention period is set to 180 days."
+            },
+            {
+                "name": "Segment Availability Restricted",
+                "value": "non_compliant",
+                "notes": "Limit the available segments to be compliant."
+            },
+            {
+                "name": "Screen Resolution Detection Disabled",
+                "value": "non_compliant",
+                "notes": "Screen resolution detection and screen resolution report must be disabled."
+            },
+            {
+                "name": "User ID Tracking Disabled",
+                "value": "non_compliant",
+                "notes": "Collection of User ID while tracking must be disabled."
+            },
+            {
+                "name": "Third-Party Cookies Disabled",
+                "value": "compliant",
+                "notes": "Third-party cookies must be disabled"
+            },
+            {
+                "name": "Opt-Out Configured",
+                "value": "unknown",
+                "notes": "A Matomo opt-out interface must be manually configured and made available to visitors. <a href=\"https://matomo.org/faq/general/faq_20000/?mtm_campaign=Matomo_App&mtm_source=Matomo_App_OnPremise&mtm_medium=App.PrivacyManager.compliance\" target=\"_blank\" rel=\"noreferrer noopener\">Learn more</a>.<br><br>This ensures visitors have a way to decline participation in audience measurement."
+            }
+        ]
+    },
+    "Transitions.getTransitionsForPageTitle": {
+        "Entrance hall": {
+            "date": "Oct 26\u2009\u2013\u2009Nov 1, 2026",
+            "previousPages": [
+                {
+                    "label": "Curator's office",
+                    "referrals": 1
+                },
+                {
+                    "label": "Room 3 - Paths",
+                    "referrals": 1
+                }
+            ],
+            "previousSiteSearches": [],
+            "pageMetrics": {
+                "loops": 0,
+                "pageviews": 11,
+                "entries": 9,
+                "exits": 0
+            },
+            "followingPages": [
+                {
+                    "label": "Room 1 - Order",
+                    "referrals": 4
+                },
+                {
+                    "label": "Room 3 - Paths",
+                    "referrals": 3
+                },
+                {
+                    "label": "Room 2 - Flow",
+                    "referrals": 2
+                },
+                {
+                    "label": "Room 5 - Horizon",
+                    "referrals": 2
+                }
+            ],
+            "followingSiteSearches": [],
+            "outlinks": [],
+            "downloads": [],
+            "referrers": [
+                {
+                    "label": "Direct entries",
+                    "shortName": "direct",
+                    "visits": 9,
+                    "details": []
+                }
+            ]
+        },
+        "Room 1 - Order": {
+            "date": "Oct 26\u2009\u2013\u2009Nov 1, 2026",
+            "previousPages": [
+                {
+                    "label": "Entrance hall",
+                    "referrals": 4
+                }
+            ],
+            "previousSiteSearches": [],
+            "pageMetrics": {
+                "loops": 0,
+                "pageviews": 4,
+                "entries": 0,
+                "exits": 0
+            },
+            "followingPages": [
+                {
+                    "label": "Room 2 - Flow",
+                    "referrals": 3
+                },
+                {
+                    "label": "Room 3 - Paths",
+                    "referrals": 1
+                }
+            ],
+            "followingSiteSearches": [],
+            "outlinks": [],
+            "downloads": [],
+            "referrers": [
+                {
+                    "label": "Direct entries",
+                    "shortName": "Direct Entry",
+                    "visits": 0
+                }
+            ]
+        },
+        "Room 2 - Flow": {
+            "date": "Oct 26\u2009\u2013\u2009Nov 1, 2026",
+            "previousPages": [
+                {
+                    "label": "Room 1 - Order",
+                    "referrals": 3
+                },
+                {
+                    "label": "Entrance hall",
+                    "referrals": 2
+                }
+            ],
+            "previousSiteSearches": [],
+            "pageMetrics": {
+                "loops": 0,
+                "pageviews": 5,
+                "entries": 0,
+                "exits": 0
+            },
+            "followingPages": [
+                {
+                    "label": "Room 3 - Paths",
+                    "referrals": 3
+                },
+                {
+                    "label": "Curator's office",
+                    "referrals": 2
+                }
+            ],
+            "followingSiteSearches": [],
+            "outlinks": [],
+            "downloads": [],
+            "referrers": [
+                {
+                    "label": "Direct entries",
+                    "shortName": "Direct Entry",
+                    "visits": 0
+                }
+            ]
+        },
+        "Room 3 - Paths": {
+            "date": "Oct 26\u2009\u2013\u2009Nov 1, 2026",
+            "previousPages": [
+                {
+                    "label": "Entrance hall",
+                    "referrals": 3
+                },
+                {
+                    "label": "Room 2 - Flow",
+                    "referrals": 3
+                },
+                {
+                    "label": "Room 1 - Order",
+                    "referrals": 1
+                },
+                {
+                    "label": "Room 4 - Colour",
+                    "referrals": 1
+                }
+            ],
+            "previousSiteSearches": [],
+            "pageMetrics": {
+                "loops": 0,
+                "pageviews": 8,
+                "entries": 0,
+                "exits": 2
+            },
+            "followingPages": [
+                {
+                    "label": "Room 4 - Colour",
+                    "referrals": 3
+                },
+                {
+                    "label": "Curator's office",
+                    "referrals": 1
+                },
+                {
+                    "label": "Entrance hall",
+                    "referrals": 1
+                },
+                {
+                    "label": "Room 5 - Horizon",
+                    "referrals": 1
+                }
+            ],
+            "followingSiteSearches": [],
+            "outlinks": [],
+            "downloads": [],
+            "referrers": [
+                {
+                    "label": "Direct entries",
+                    "shortName": "Direct Entry",
+                    "visits": 0
+                }
+            ]
+        },
+        "Room 4 - Colour": {
+            "date": "Oct 26\u2009\u2013\u2009Nov 1, 2026",
+            "previousPages": [
+                {
+                    "label": "Room 3 - Paths",
+                    "referrals": 3
+                },
+                {
+                    "label": "Room 5 - Horizon",
+                    "referrals": 1
+                }
+            ],
+            "previousSiteSearches": [],
+            "pageMetrics": {
+                "loops": 0,
+                "pageviews": 4,
+                "entries": 0,
+                "exits": 1
+            },
+            "followingPages": [
+                {
+                    "label": "Room 5 - Horizon",
+                    "referrals": 2
+                },
+                {
+                    "label": "Room 3 - Paths",
+                    "referrals": 1
+                }
+            ],
+            "followingSiteSearches": [],
+            "outlinks": [],
+            "downloads": [],
+            "referrers": [
+                {
+                    "label": "Direct entries",
+                    "shortName": "Direct Entry",
+                    "visits": 0
+                }
+            ]
+        },
+        "Room 5 - Horizon": {
+            "date": "Oct 26\u2009\u2013\u2009Nov 1, 2026",
+            "previousPages": [
+                {
+                    "label": "Entrance hall",
+                    "referrals": 2
+                },
+                {
+                    "label": "Room 4 - Colour",
+                    "referrals": 2
+                },
+                {
+                    "label": "Room 3 - Paths",
+                    "referrals": 1
+                }
+            ],
+            "previousSiteSearches": [],
+            "pageMetrics": {
+                "loops": 0,
+                "pageviews": 5,
+                "entries": 0,
+                "exits": 4
+            },
+            "followingPages": [
+                {
+                    "label": "Room 4 - Colour",
+                    "referrals": 1
+                }
+            ],
+            "followingSiteSearches": [],
+            "outlinks": [],
+            "downloads": [],
+            "referrers": [
+                {
+                    "label": "Direct entries",
+                    "shortName": "Direct Entry",
+                    "visits": 0
+                }
+            ]
+        }
+    }
+}
