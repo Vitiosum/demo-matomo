@@ -147,7 +147,9 @@ $app = serve($appPort, "$root/public", "$root/public/index.php", ['MATOMO_URL' =
 try {
     $r = http('GET', "http://127.0.0.1:$appPort/curator");
     check('without a token the office explains how to get one', $r['status'] === 200 && str_contains($r['body'], "The curator's keys are missing"));
-    check('without a token /health/deep is 503', http('GET', "http://127.0.0.1:$appPort/health/deep")['status'] === 503);
+    $r = http('GET', "http://127.0.0.1:$appPort/health/deep");
+    check('without a token /health/deep is 503 and names the missing step', $r['status'] === 503 && str_contains((string) (json_decode($r['body'], true)['nextStep'] ?? ''), 'MATOMO_TOKEN'), $r['body']);
+    check('without a token the hall says a setup step is waiting', str_contains(http('GET', "http://127.0.0.1:$appPort/")['body'], 'Waiting for one setup step'));
     check('without a token hits are still forwarded', http('GET', "http://127.0.0.1:$appPort/visitor-book?rec=1&action_name=x")['status'] === 204);
 } finally {
     proc_terminate($app);

@@ -1,5 +1,5 @@
 <?php
-/** @var ?array $office */
+/** @var ?array $office @var ?string $setup */
 use Museum\FloorPlan;
 use Museum\Museum;
 ?>
@@ -19,6 +19,9 @@ use Museum\Museum;
           <div><dt>Visitor book</dt><dd>Matomo, hosted by Clever Cloud in Paris</dd></div>
           <?php if ($office !== null): ?>
             <div><dt>Visitors today</dt><dd class="admission__count"><?= number_format((int) $office['today']) ?></dd></div>
+          <?php endif ?>
+          <?php if ($setup !== null): ?>
+            <div><dt>Curator's office</dt><dd>Waiting for one setup step. <?= h($setup) ?> <a href="/curator">Details in the office</a>.</dd></div>
           <?php endif ?>
         </dl>
       </aside>

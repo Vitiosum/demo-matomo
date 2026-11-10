@@ -40,7 +40,7 @@ switch (true) {
         break;
 
     case $path === '/':
-        page('hall', Museum::HALL_TITLE, ['office' => Curator::cached($siteId)]);
+        page('hall', Museum::HALL_TITLE, ['office' => Curator::cached($siteId), 'setup' => setupStep($matomo)]);
         break;
 
     case preg_match('#^/room/([1-5])$#', $path, $m) === 1:
@@ -144,6 +144,18 @@ function office(?Matomo $matomo, int &$siteId): array
     }
 }
 
+/** The setup step still to do, or null when MATOMO_URL and MATOMO_TOKEN are both set. */
+function setupStep(?Matomo $matomo): ?string
+{
+    if ($matomo === null) {
+        return 'Set MATOMO_URL to the address of the Matomo add-on, then restart the app.';
+    }
+    if (!$matomo->hasToken()) {
+        return 'Open Matomo from the Clever Cloud Console, create an API token (Administration > Personal > Security), set it as MATOMO_TOKEN, then restart the app.';
+    }
+    return null;
+}
+
 /** First-party tracking endpoint: what the browser's tracker sends, Matomo receives. */
 function visitorBook(?Matomo $matomo, int $siteId): void
 {
@@ -172,7 +184,7 @@ function visitorBook(?Matomo $matomo, int $siteId): void
 function deepHealth(?Matomo $matomo, int $siteId): void
 {
     if ($matomo === null) {
-        json(['status' => 'fail', 'matomo' => 'MATOMO_URL is not set'], 503);
+        json(['status' => 'fail', 'matomo' => 'MATOMO_URL is not set', 'nextStep' => setupStep($matomo)], 503);
         return;
     }
     $start = microtime(true);
@@ -181,6 +193,7 @@ function deepHealth(?Matomo $matomo, int $siteId): void
     $ok = $tracker >= 200 && $tracker < 500;
     if (!$matomo->hasToken()) {
         $report['reportingApi'] = 'MATOMO_TOKEN is not set';
+        $report['nextStep'] = setupStep($matomo);
         $ok = false;
     } else {
         try {

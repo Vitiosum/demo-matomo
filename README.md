@@ -1,6 +1,8 @@
 # The Small Museum — Matomo analytics on Clever Cloud
 
 > A tiny white-cube museum: five rooms, five paintings drawn by code. Walk from room to room and the **Matomo add-on** counts the visits, the page views, the time spent and every painting you stand in front of for eight seconds. Behind the galleries, the **curator's office** reads it all back, server-side, from the Matomo Reporting API: visitors today, the most loved painting, the path between rooms. No cookie is set, the data stays in Paris, and the API token never leaves the server.
+>
+> **Before you start.** One step cannot be scripted: the curator's office needs a **Matomo API token**, created in Matomo opened from the Clever Cloud Console, then set as `MATOMO_TOKEN` before a restart (step 5 of the deployment, about two minutes). Until then the museum works, and the home page, the office and `/health/deep` (503) name that missing step.
 
 ![Room 3, Paths: a Truchet painting and its cartel](docs/room.png)
 
@@ -53,12 +55,11 @@ clever deploy
 clever open
 ```
 
-The museum and the visitor book work right away (`/health/deep` answers 503 until the token below is set). Then give the curator the keys: an owner step, once, about two minutes:
+The museum and the visitor book work right away. One step is left, the only manual one, done once by an owner of the add-on in about two minutes:
 
-1. Open the Matomo URL and **sign in with your Clever Cloud account** (the add-on uses Clever Cloud SSO; accept the permissions the first time).
-2. In Matomo, **Administration › Personal › Security › Create new token**, and copy it.
-3. `clever env set MATOMO_TOKEN <token>` then `clever restart`. The pre-run hook `bin/seed.php`, the only setup script, then creates the site *The Small Museum* and sends its opening night; it is idempotent and never fails a deployment.
-4. Check `https://<your-app>.cleverapps.io/health/deep` returns 200, then open `/curator`.
+**5. The API token.** Open the Matomo URL and **sign in with your Clever Cloud account** (the add-on uses Clever Cloud SSO; accept the permissions the first time). In Matomo, **Administration › Personal › Security › Create new token**, and copy it. Then `clever env set MATOMO_TOKEN <token>` and `clever restart`: the pre-run hook `bin/seed.php`, the only setup script, creates the site *The Small Museum* and sends its opening night; it is idempotent and never fails a deployment. Check that `https://<your-app>.cleverapps.io/health/deep` returns 200, then open `/curator`.
+
+Until that step is done, the home page (*Admission*, « Curator's office »), `/curator` and `/health/deep` (503, field `nextStep`) say what is missing, so the 503 is expected and explained.
 
 Optional, for a snappier live demo: Matomo on Clever Cloud queues hits in batches of 25 (QueuedTracking) and archives reports on a schedule. Lower the batch size in *Administration › System › General settings*. To show the CNIL mode live, enforce it in *Administration › Privacy › Compliance* and reload the office.
 
@@ -67,7 +68,7 @@ Optional, for a snappier live demo: Matomo on Clever Cloud queues hits in batche
 | Variable | Set by | Role |
 |---|---|---|
 | `MATOMO_URL` | you | Address of the Matomo add-on. The add-on does not inject variables into linked apps, so the app needs this one |
-| `MATOMO_TOKEN` | you, from Matomo (owner step above) | Matomo API token, read server-side only (POST body, never in a URL or a page) |
+| `MATOMO_TOKEN` | you, from Matomo (step 5 above) | Matomo API token, read server-side only (POST body, never in a URL or a page) |
 | `MATOMO_SITE_ID` | optional | Forces a site id instead of the one found or created by the seed |
 | `CC_WEBROOT` | you | `/public` |
 | `CC_PRE_RUN_HOOK` | you | `php bin/seed.php`: idempotent seed, never fails the deployment |
@@ -91,7 +92,7 @@ src/Painter.php       the five generative paintings (SVG, seeded, deterministic)
 src/FloorPlan.php     the architectural floor plan, with flows and red dots
 public/assets/        museum.css, museum.js (tracker set-up, visitor book, lingering)
 views/                plain PHP templates; brand/ holds the Clever Brand Kit files
-tests/run.php         33 checks: php tests/run.php (fake Matomo, real app on php -S)
+tests/run.php         34 checks: php tests/run.php (fake Matomo, real app on php -S)
 ```
 
 Plain PHP 8.5, no framework, no Composer dependency.
